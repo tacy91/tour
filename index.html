@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>旅游网站</title>	
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/angular/angular.js"></script>
+</head>
+<body>
+	<nav class="navbar naravb-default "><!-- navbar-fixed-top -->
+		<div class=" container">
+			<!-- <div class="main"> -->
+				<div class="navbar-header">
+					<div class="navbar-brand"><img src="images/logo.png"></div>	
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>			
+				<div class="collapse navbar-collapse" id="navbar-collapse">				
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="active">首页</a></li>
+						<li><a>目的地</a></li><li><a>私人订制</a></li><li><a>主题旅游</a></li><li><a>热门活动</a></li><li><a>更多</a></li>
+					</ul> 
+				</div>
+			<!-- </div> -->
+		</div>
+	</nav>
+	<div class="fullWid">
+			<div class="container rel">
+				<div class="abs text-right log_btn"><a href="login.html">登录</a><a href="register.html">注册</a></div>
+			</div>
+			<img src="images/idx_1.jpg" alt="" class="img-responsive ">			
+	</div>
+	<div class="fullWid">
+			<img src="images/idx_2.jpg" alt="" class="img-responsive ">
+	</div>
+	<div class="fullWid">
+			<img src="images/idx_3.jpg" alt="" class="img-responsive ">
+	</div>
+	<div class="fullWid">
+			<img src="images/idx_4.jpg" alt="" class="img-responsive ">
+	</div>
+	<div class="fullWid">
+			<img src="images/idx5.jpg" alt="" class="img-responsive ">
+	</div>
+	<div class="container">
+		<div class="col-md-12 zoomImg_wrap">
+			<div class="col-md-6">
+				<div class="imgBox">
+					<img src="images/idx_v1.jpg" alt="" >
+					<div class="shadowbg" style="display: none; opacity: 0.8;"><a href="order.html"></a></div>
+					<div class="shadowTxt">
+    							<h2>世界那么大，我想去看看</h2>
+    							<h1>凤凰古城七日游</h1>
+    							<div class="line"></div>
+    						</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="imgBox">
+					<img src="images/idx_v2.jpg" alt="" >
+					<div class="shadowbg" style="display: none; opacity: 0.8;"><a href="order.html"></a></div>
+					<div class="shadowTxt">
+    							<h2>世界那么大，我想去看看</h2>
+    							<h1>凤凰古城七日游</h1>
+    							<div class="line"></div>
+    						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-md-12 zoomImg_wrap">
+			<div class="col-md-6">
+				<div class="imgBox">
+					<img src="images/idx_v3.jpg" alt="" >
+					<div class="shadowbg" style="display: none; opacity: 0.8;"><a href="order.html"></a></div>
+					<div class="shadowTxt">
+    							<h2>世界那么大，我想去看看</h2>
+    							<h1>凤凰古城七日游</h1>
+    							<div class="line"></div>
+    						</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="imgBox">
+					<img src="images/idx_v4.jpg" alt="" >
+					<div class="shadowbg" style="display: none; opacity: 0.8;"><a href="order.html"></a></div>
+					<div class="shadowTxt">
+						<h2>世界那么大，我想去看看</h2>
+						<h1>凤凰古城七日游</h1>
+						<div class="line"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fullWid form1_wrap">
+		<div class="container ">
+			<div class="hspace20"></div>
+			<h3 class="text-center">你只需踏出第一步</h3>
+			<h5 class="text-center">尽情玩暇风景，其他的交给我们</h5>
+			<form role="form" class="form1">
+				<div class="form-group">
+					
+				</div>
+				<div class="form-group">
+					<div class="col-md-12 form_bg ovh nopad">
+						<div class="col-md-4 nopad">
+							<input type="text" class="form-control" placeholder="姓名"  required>
+						</div>
+						<div class="col-md-4 nopad">
+							<input type="text" class="form-control" placeholder="目的地"  required>
+						</div>
+						<div class="col-md-4 nopad">
+							<input type="text" class="form-control" placeholder="天数"  required ng-pattern="/[0-9]/">
+						</div>					
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12 form_bg nopad">
+						<input type="text" class="form-control" placeholder="电话" ng-pattern="/[0-9]/">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12 form_bg nopad">
+						<textarea class="form-control" rows="3" placeholder="备注内容">		
+						</textarea>
+					</div>						
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary mauto" style="padding-left:20px; padding-right:20px;">
+						提交
+					</button>
+				</div>
+			</form>
+			<div class="hspace20"></div>
+		</div>		
+	</div>
+
+	<div class="fullWid">
+		<div class="container footer">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					<div><img src="images/logo.jpg" class="img-responsive mauto" /></div>
+					<h2 class="text-center">Natural trip</h2>
+					<h3 class="text-center">阳睿旅行</h3>
+					<h5 class="text-center">探索自然 寻真自我</h5>
+					<h5 class="text-center">Natural exploration Find</h5> 
+					<h5 class="text-center">the true self</h5>
+				</div>
+				<div class="col-md-3">
+					<div class="mauto">
+						<h3 class="title">服务热线</h3>
+						<h4>800-480-1247</h4>
+						<h5>Yangrui@163.com</h5>
+						<ul class="list-unstyled">
+							<li><a>关于我们</a></li>
+							<li><a>麋鹿会员</a></li>
+							<li><a>联系我们</a></li>
+							<li><a>加入我们</a></li>
+						</ul>
+					</div>					
+				</div>
+				<div class="col-md-6">
+					<div class="col-md-12"><h3 class="title">关注阳睿旅行公众号</h3></div>
+					<div class="col-md-12">
+						<div class="col-md-6">
+							<img src="images/ewm1.jpg" alt="" class="img-responsive">
+						</div>
+						<div class="col-md-6">	
+							<img src="images/ewm1.jpg" alt="" class="img-responsive">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
