@@ -1,33 +1,69 @@
 $(document).ready(function(){
-		var mpointHeight=$('.m_point').find("img").height();
-		$('.m_point').css('height',mpointHeight);
+		//var mpointHeight=$('.m_point').find("img").height();
+		//$('.m_point').css('height',mpointHeight);
 		var thisHeight=$('.zoomImg_wrap .imgBox').find("img").height();
 		$('.zoomImg_wrap .imgBox').css('height',thisHeight);
+		// $('.zoomImg_wrap .imgBox').bind('mouseover',function(){
+		// 	$('.zoomImg_wrap .imgBox').css('height',thisHeight);
+		// 	$(this).find('img').stop().animate({ width:'106%',marginLeft:'-3%',marginTop:'-3%'});
+		// 	$(this).find('.shadowbg').stop().fadeIn(500);
+		// 	$(this).find('.shadowTxt').stop().fadeIn(500);
+		// 	$(this).find(".line").stop().animate({ width:'60px'},500);
+		// });
+		
+		// $('.zoomImg_wrap .imgBox').bind('mouseout',function(){
+		// 	$('.zoomImg_wrap .imgBox').css('height',thisHeight);
+		// 	$(this).find('img').stop().animate({ width:'100%',marginLeft:'0',marginTop:'0'});			
+		// 	$(this).find('.shadowbg').stop().fadeOut(500);
+		// 	$(this).find('.shadowTxt').stop().fadeOut(500);
+		// 	$(this).find(".line").stop().animate({ width:'20px'},500);
+		// });
 		$('.zoomImg_wrap .imgBox').bind('mouseover',function(){
-			$('.zoomImg_wrap .imgBox').css('height',thisHeight);
-			$(this).find('img').stop().animate({ width:'106%',marginLeft:'-3%',marginTop:'-3%'});
-			$(this).find('.shadowbg').stop().fadeIn(500);
-			$(this).find('.shadowTxt').stop().fadeIn(500);
-			$(this).find(".line").stop().animate({ width:'60px'},500);
+			shadow_over(this);
 		});
+		
 		$('.zoomImg_wrap .imgBox').bind('mouseout',function(){
-			$('.zoomImg_wrap .imgBox').css('height',thisHeight);
-			$(this).find('img').stop().animate({ width:'100%',marginLeft:'0',marginTop:'0'});			
-			$(this).find('.shadowbg').stop().fadeOut(500);
-			$(this).find('.shadowTxt').stop().fadeOut(500);
-			$(this).find(".line").stop().animate({ width:'20px'},500);
+			shadow_out(this);
 		});
+
+		function shadow_over(element){
+			var height=$(element).height();
+			//alert(height);
+			$(element).css('height',height);
+			$(element).find('img').stop().animate({ width:'106%',height:'106%',marginLeft:'-3%',marginTop:'-3%'});
+			$(element).find('.shadowbg').stop().fadeIn(500);
+			setTimeout(function(){$(element).find('.shadowTxt').stop().fadeIn(500);},200)
+			$(element).find(".line").stop().animate({ width:'60px'},500);
+		}
+		function shadow_out(element){
+			var height=$(element).height();
+			//alert(height);
+			//$(element).css('height',height)
+			$(element).find('img').stop().animate({ width:'100%',height:'100%',marginLeft:'0',marginTop:'0'});
+			
+			//$(element).find('.shadowTxt').stop().fadeOut(500);
+			$(element).find('.shadowbg').stop().fadeOut(500);
+			setTimeout(function(){$(element).find('.shadowTxt').stop().fadeOut(200);},200)
+			$(element).find(".line").stop().animate({ width:'20px'},500);
+		}
+		function fade_in(_this,num){
+
+			$(_this).style.opacity=num/100;
+			$(_this).style.filter='alpha(opacity='+num+')';
+			//if($(_this).hasAttribute('opacity'))
+
+		}
 		$(window).resize(function(){
 			thisHeight=$('.zoomImg_wrap .imgBox').find("img").height();	
 			$('.zoomImg_wrap .imgBox').css('height',thisHeight);
-			var mpointHeight=$('.m_point').find("img").height();
-			$('.m_point').css('height',mpointHeight);
+			//var mpointHeight=$('.m_point').find("img").height();
+			//$('.m_point').css('height',mpointHeight);
 		});
 		$(window).load(function(){
 			thisHeight=$('.zoomImg_wrap .imgBox').find("img").height();	
 			$('.zoomImg_wrap .imgBox').css('height',thisHeight);
-			var mpointHeight=$('.m_point').find("img").height();
-			$('.m_point').css('height',mpointHeight);
+			//var mpointHeight=$('.m_point').find("img").height();
+			//$('.m_point').css('height',mpointHeight);
 		});
 	$(".idx_view li > div").bind('mouseover',function(){		
 		$(this).css('height',thisHeight);
@@ -65,32 +101,32 @@ $(document).ready(function(){
 	});
 	$(".themeHalf li .link .imgBox").bind('mouseover',function(){
 		$(this).find(".f_shadowbg").stop().fadeIn(500);
-		$(this).find(".shadowbg").stop().fadeOut();
-		$(this).find(" .shadowTxt").stop().hide();
-		var txt=$(this).find(".shadowTxt div").text();
-		$(this).find(".f_shadowTxt").text(txt).stop().fadeIn(500);
+		$(this).find(".txtbg").stop().fadeOut();
+		$(this).find(" .txt").stop().hide();
+		var txt=$(this).find(".txt div").text();
+		$(this).find(".f_shadowTxt").text(txt).stop().delay(500).stop().fadeTo('slow',1);
 	});
 	$(".themeHalf li .link .imgBox").bind('mouseleave',function(){
 		$(this).find(".f_shadowbg").stop().fadeOut(500);
-		$(this).find(".shadowbg").stop().fadeIn();
-		$(this).find(" .shadowTxt").stop().show();
-		var txt=$(this).find(" .shadowTxt div").text();
-		$(this).find(".f_shadowTxt").text(txt).stop().fadeOut(500);
+		$(this).find(".txtbg").stop().fadeIn();
+		$(this).find(".txt").stop().delay(500).fadeTo('slow',1);
+		//var txt=$(this).find(" .txt div").text();
+		$(this).find(".f_shadowTxt").stop().fadeOut(100);
 	});
 	$(".m_point").bind('mouseover',function(){
 		
-		$(this).css('height',mpointHeight);
-		$(this).find("img").stop().animate({width:'150%',marginLeft:'-25%',marginTop:'-50%'},500, 'easeOutBounce');
-		$(this).find(".cTent").stop().fadeIn(800);
+		//$(this).css('height',mpointHeight);
+		$(this).find("img").stop().animate({width:'120%',marginTop:'-10%'},500, 'easeOutBounce');
+		$(this).find(".cTent").stop().fadeIn(300,function(){$(this).animate({top:'-30px'},300)});
 	});
 	$(".m_point").bind('mouseout',function(){
-		$(this).css('height',mpointHeight);
-		$(this).find("img").stop().animate({width:'100%',marginLeft:'0%',marginTop:'0%'},500, 'easeOutBounce');
-		$(this).find(".cTent").stop().fadeOut(800);
+		//$(this).css('height',mpointHeight);
+		$(this).find("img").stop().animate({width:'100%',marginTop:'0%'},500, 'easeOutBounce');
+		$(this).find(".cTent").stop().fadeOut(300,function(){$(this).animate({top:'-20px'},300)});
 	});
-	$(".dchoose_one").bind('mouseover',function(){
-		$(this).find('img').stop().animate({ width:'106%',marginLeft:'-3%',marginTop:'-1%'});
-	});
+	// $(".dchoose_one").bind('mouseover',function(){
+	// 	$(this).find('img').stop().animate({ width:'106%',marginLeft:'-3%',marginTop:'-1%'});
+	// });
 	
 	$(".tabBox .tab_top ul li a").click(function(){
 		$(this).parent().addClass('active').siblings().removeClass('active');
@@ -181,7 +217,27 @@ $(document).ready(function(){
 	$(".dateitem a").click(function(){
 		$(this).addClass("active").siblings().removeClass("active");
 	});
+
+	
+	//wait_load.opacity(0);
+	$(window).bind('scroll',_wait_load);
+	$(window).bind('resize',_wait_load);
+	
+	//alert($('.wait_load').size());
+//验证
+	$('form .sub').click(function() {
+		var flag=true;
+		if(!check_notempty()){
+			flag=false;
+
+		}
+		if(flag){
+			alert('验证成功！');
+		}
+	});
+
 });
+var wait_load=$('.wait_load');
 function showCenter(elemt){
 		$('.fp_shasowbg').show();
 		elemt.show();
@@ -191,3 +247,63 @@ function showCenter(elemt){
 		elemt.css({'left':left,'top':top});
 		
 	};
+	function _wait_load(){
+
+		setTimeout(function(){
+			
+			for(var i=0;i<$('.wait_load').size();i++){
+				//alert($('.wait_load').size());
+				var _this=$('.wait_load').get(i);
+				//alert(offsetTop($('.wait_load').get(i)));
+				if(getInner().height+getScroll().top>=offsetTop(_this)+50){
+
+					$(_this).attr('src',$(_this).attr('xsrc')).fadeTo(1000,1);
+				}
+			}
+		},500);
+	}
+	function getScroll(){
+		return{
+			top:document.documentElement.scrollTop||document.body.scrollTop,
+			left:document.documentElement.scrollLeft||document.body.scrollLeft
+		}
+	}
+	function offsetTop(element){
+		var top=element.offsetTop;
+		var parent=element.offsetParent;
+		while(parent!=null){
+			top+=parent.offsetTop;
+			parent=parent.offsetParent;
+		}
+		return top;
+	}
+	//跨浏览器获取视口大小
+function getInner(){
+	if(typeof window.innerWidth!='undefined'){
+		return{
+			width:window.innerWidth,
+			height:window.innerHeight
+		}
+	}else {
+		return{
+			width:document.documentElement.clientWidth,
+			height:document.documentElement.clientHeight
+		}
+	}
+}
+
+//验证是否为空
+var chufa=$('#chufa').val();
+function check_notempty(){
+	
+	if(chufa=='') {
+		// layer.tips('请填写出发地', $('.tip_box'), {
+		//   tips: [1, '#3595CC'],
+		//   time: 4000
+		// });
+		alert('false');
+		return false;
+	}
+}
+
+
