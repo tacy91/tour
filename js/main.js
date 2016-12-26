@@ -265,6 +265,34 @@ $(document).ready(function(){
 			$('form').find('.error_email').css('display','none');
 		}
 	});
+	$('#timecf').bind('blur',function(){
+		if(!check_timecf()){
+			$('form').find('.info_timecf').css('display','block');
+		}else{
+			$('form').find('.info_timecf').css('display','none');
+		}
+	});
+	$('#timelx').bind('blur',function(){
+		if(!check_timelx()){
+			$('form').find('.info_timelx').css('display','block');
+		}else{
+			$('form').find('.info_timelx').css('display','none');
+		}
+	});
+	$('#timelen').bind('blur',function(){
+		if(!check_timelen()){
+			$('form').find('.info_timelen').css('display','block');
+		}else{
+			$('form').find('.info_timelen').css('display','none');
+		}
+	});
+	$('#budget').bind('blur',function(){
+		if(!check_budget()){
+			$('form').find('.info_budget').css('display','block');
+		}else{
+			$('form').find('.info_budget').css('display','none');
+		}
+	});
 	$('form .sub').click(function() {
 		var flag=true;
 		if(!check_name()){
@@ -287,8 +315,100 @@ $(document).ready(function(){
 			$('form').find('.error_email').css('display','block');	
 			flag=false;
 		}
+		if(!check_timecf()){
+			$('form').find('.info_timecf').css('display','block');	
+			flag=false;
+			
+		}
+		if(!check_timelx()){
+			$('form').find('.info_timelx').css('display','block');	
+			flag=false;
+			
+		}
+		if(!check_timelen()){
+			
+			$('form').find('.info_timelen').css('display','block');	
+			flag=false;
+		}
+		if(!check_budget()){
+			
+			$('form').find('.info_budget').css('display','block');	
+			flag=false;
+		}
 		if(flag){
-			alert('验证成功！');
+			alert('验证成功！');//$('#timecf').val()
+		}
+	});
+	
+	
+	$('#account').blur(function(){
+		
+		if(!check_notempty($('#account').val())){
+			$('.info_account').css('display','block');
+			$('.error_account').css('display','none');
+		}else if(!check_email()){
+			$('.info_account').css('display','none');
+			$('.error_account').css('display','block');
+		}else{
+			$('.info_account').css('display','none');
+			$('.error_account').css('display','none');
+		}
+	});
+	$('#nickname').blur(function() {
+		
+		if(!check_notempty($('#nickname').val())){
+			$('.info_nickname').css('display','block');			
+		}else{
+			$('.info_nickname').css('display','none');			
+		}
+	});
+	$('#jzd').blur(function() {		
+		if(!check_notempty($('#jzd').val())){
+			$('.info_njzd').css('display','block');			
+		}else{
+			$('.info_jzd').css('display','none');			
+		}
+	});
+	$('#pass').bind('blur',function(){
+		if(!check_notempty($('.pass').val())){
+			$('.info_pass').css('display','block');
+			$('.error_pass').css('display','none');
+		}else if(!check_pass()){
+			$('.info_pass').css('display','none');
+			$('.error_pass').css('display','block');
+		}else{
+			$('.info_pass').css('display','none');
+			$('.error_pass').css('display','none');
+		}
+	});
+
+	$('.btn_reg').click(function(){
+		var nick=$('#nickname').val();
+		var account=$('#account').val();
+		var flag=true;
+		if(!check_email()){
+			$('.info_account').css('display','none');
+			$('.info_account').css('display','block');
+			flag=false;
+		}
+		if(!check_notempty($('.info_nickname').val())){
+			$('.info_nickname').css('display','block');
+			flag=false;
+		}
+		if(!check_notempty($('#jzd').val())){
+			$('.info_jzd').css('display','block');
+			flag=false;
+		}
+		if(!check_pass()){
+			$('.error_pass').css('display','block');
+			flag=false;
+		}
+		if(!check_notpass()){
+			$('.error_notpass').css('display','block');
+			flag=false;
+		}
+		if(flag){
+			alert('注册成功！');
 		}
 	});
 
@@ -350,6 +470,11 @@ function getInner(){
 
 //验证是否为空
 //var chufa=$('#chufa').val();
+function check_notempty(str){
+	if(str!=''){		
+		return true;
+	}
+}
 function check_name(){
 	if($('#name').val()!=''){		
 		return true;
@@ -371,14 +496,42 @@ function check_phone(){
 	}
 }
 function check_email(){
-		if(/^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-]+(\.[a-zA-Z]{2,4}){1,2}$/.test($.trim($('#email').val()))) return true;
+		if(/^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-]+(\.[a-zA-Z]{2,4}){1,2}$/.test($.trim($('.c_email').val()))) return true;
 	}
-function check_notempty(str){	
-	if(str=='') {						
+// function check_notempty(str){	
+// 	if(str=='') {						
+// 		return true;
+// 	}
+// 	else return false;
+
+// }
+function check_timecf(){
+	if($('#timecf').val()!=''){
 		return true;
 	}
-	else return false;
-
 }
-
-
+function check_timelx(){
+	if($('#timelx').val()!=''){
+		return true;
+	}
+}
+function check_timelen(){
+	if($('#timelen').val()!=0){
+		return true;
+	}
+}
+function check_budget(){
+	if($('#budget').val()!=0){
+		return true;
+	}
+}
+function check_pass(){
+	var value=$.trim($('form .pass').val());  //去掉两边的空格
+	var value_length=value.length;
+	if( value_length>=6&&value_length<=20&&!/\s/.test(value)){
+		return true;
+	}
+}
+function check_notpass(){
+		if($.trim($('form .notpass').val())==$.trim($('form .pass').val())) return true;
+	}

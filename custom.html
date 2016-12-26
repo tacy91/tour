@@ -12,9 +12,13 @@
 		<link href="css/main.css" rel="stylesheet" type="text/css">
 		<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<link rel="stylesheet" type="text/css" href="datetimepicker/css/bootstrap-datetimepicker.css">
 		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 		<!-- <script type="text/javascript" src="js/layer/layer.js"></script> -->
 		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/moment.js"></script>
+		<script type="text/javascript" src="js/zh-cn.js"></script>
+		<script type="text/javascript" src="datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 		
 		<script type="text/javascript" src="js/main.js"></script>
 		<style>
@@ -25,12 +29,22 @@
 			.form_cus label{ color: #666; }
 			.form_cus .col-md-12{ margin-top: 5px; }
 			.form_cus label{ margin-bottom: 0; }
-			.tip_parent{ position: relative; }
+			.tip_box{ position: relative; }
 			.form_cus span.infotip{ position: absolute; background: #000; color: #fff;display: inline-block; font-size:12px; padding:5px 10px; left: 15px; top: 96%; border-radius:5px; z-index: 100; display: none;}
 			.form_cus span.infotip i{ display: block; position: absolute; border-bottom:4px solid #000; border-left:4px solid transparent;border-right:4px solid transparent; top: -4px; left: 5px;}
 		</style>
 		<script type="text/javascript">
-			
+			$(function(){
+				   $('#datetimepicker1').datetimepicker({  
+				        format: 'YYYY-MM-DD',  
+				        locale: moment.locale('zh-cn')  
+				    }); 
+				   $('#datetimepicker2').datetimepicker({  
+				        format: 'YYYY-MM-DD',  
+				        locale: moment.locale('zh-cn')  
+				    }); 
+				   
+			})
 		</script>
 	</head>
 
@@ -108,17 +122,32 @@
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
-											<label class="col-md-12 ">出发时间</label>
-											<div class="col-md-12">
-												<input type="text" class="form-control">
+											<label class="col-md-12 " >出发时间</label>
+											<div class="col-md-12 tip_box" >
+												<div class="input-group date" id='datetimepicker1'>
+												<input type="text" class="form-control" id="timecf">
+												<span class="input-group-addon">  
+                    <span class="glyphicon glyphicon-calendar"></span>  
+                </span>  
+                								
+                								</div>
+                								<span class="infotip info_timecf">请选择出发时间<i></i></span>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<label class="col-md-12 ">出行时长</label>
-											<div class="col-md-12">
-												<input type="text" class="form-control">
+											<div class="col-md-12 tip_box">
+												<select class="form-control" id='timelen'>
+													<option value="0">请选择天数</option>
+													<option value="1">1天</option>
+													<option value="2">3天</option>
+													<option value="3">5天</option>
+													<option value="4">1周</option>
+													<option value="5">2周</option>
+												</select>
+												<span class="infotip info_timelen">请选择天数<i></i></span>
 											</div>
 										</div>
 									</div>																	
@@ -161,14 +190,15 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<label class="col-md-12">单人预算</label>
-											<div class="col-md-12">
-													<select class="form-control" >
-		
-														<option value="0">￥15,000 - 30,000</option>
-														<option value="1">￥30,000 - 50,000</option>
-														<option value="2">￥50,000 - 80,000</option>
-														<option value="2">￥80,000 以上</option>
+											<div class="col-md-12 tip_box">
+													<select class="form-control" id="budget">
+														<option value="0">请选择单人预算</option>
+														<option value="1">￥15,000 - 30,000</option>
+														<option value="2">￥30,000 - 50,000</option>
+														<option value="3">￥50,000 - 80,000</option>
+														<option value="4">￥80,000 以上</option>
 													</select>
+													<span class="infotip info_budget">请选择单人预算<i></i></span>
 											</div>
 										</div>
 									</div>								
@@ -210,8 +240,16 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<label class="col-md-12">联系时间</label>
-											<div class="col-md-12">
-												<input type="text" class=" form-control">
+											<div class="col-md-12 tip_box">
+												<div class="input-group date" id='datetimepicker2'>
+												<input type="text" class=" form-control" id="timelx">
+												<span class="input-group-addon">  
+                    <span class="glyphicon glyphicon-calendar"></span>  
+                </span>  
+                								
+												</div>
+												<span class="infotip info_timelx">请选择联系时间<i></i></span>
+
 											</div>
 										</div>
 									</div>																
@@ -240,7 +278,7 @@
 										<div class="col-md-12">
 											<label class="col-md-12">邮箱</label>
 											<div class="col-md-12 tip_box">
-												<input type="text" class="col-md-12 form-control" id="email">
+												<input type="text" class="col-md-12 form-control c_email" id="email">
 												<span class="infotip info_email">请输入邮箱<i></i></span>
 												<span class="infotip error_email">邮箱格式不正确<i></i></span>
 											</div>

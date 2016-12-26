@@ -572,6 +572,15 @@ left: 90px;
   line-height: 1.929;
 }
 .login_right div a{ color: #990002;}
+.form_cus{ max-width: 600px; margin: auto; /*background: #000; opacity: 0.5;*/}
+		
+form .form-group::after{ content: ''; clear: both; }
+/*form label{ color: #666; }*/
+form .col-md-12{ margin-top: 5px; }
+forms label{ margin-bottom: 0; }
+.tip_box{ position: relative; }
+form span.infotip{ position: absolute; background: #000; color: #fff;display: inline-block; font-size:12px; padding:5px 10px; left: 15px; top: 96%; border-radius:5px; z-index: 100; display: none;}
+form span.infotip i{ display: block; position: absolute; border-bottom:4px solid #000; border-left:4px solid transparent;border-right:4px solid transparent; top: -4px; left: 5px;}
 /*-------登录页面样式end-------*/
 @media screen and (max-width: 1105px) {
 	.nav .main > ul > li{padding:0 30px;}
