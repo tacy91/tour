@@ -44,7 +44,8 @@
 }
 
 .custom_form {
-	background-color: rgba(0, 0, 0, 0.5);
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+	background: #fff;
 	/*width: 490px;*/
 	min-height: 940px;
 	margin: 0 auto;
