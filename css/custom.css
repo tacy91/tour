@@ -6,38 +6,41 @@
 .custom_bg {
 	background-image: url(../images/custom_bg.jpg);
 	background-attachment: fixed;
-	min-height: 1200px;
+	/*min-height: 1200px;*/
+	padding-bottom: 50px;
 }
 
 .title {
 	width: 100%;
 	margin: 0 auto;
+	margin-top: 30px;
 	/*padding: 60px 0px 40px 0px;*/
 	/*border-bottom: 1px solid #711717;*/
 	/*margin-bottom: 80px;*/
 	overflow: hidden;
 }
-.titleL{ width: 35%; float: left;}
-.titleR{ margin-left: 35%; padding-left: 30px;}
+.titleL{ /*width: 35%; float: left;*/}
+.titleR{ /*margin-left: 35%; padding-left: 30px;*/}
 .text_a {
-	font-size: 30px;
+	font-size: 20px;
 	color: rgb(113, 23, 23);
 	line-height: 40px;
 }
 
 .text_b {
-	font-size: 48px;
+	font-size: 32px;
 	color: rgb(113, 23, 23);
+	margin-bottom: 30px;
 }
 
 .text_c {
-	font-size: 16px;
+	font-size: 14px;
 	color: rgb(113, 23, 23);
 	text-align: justify;
 }
 
 .text_d {
-	font-size: 24px;
+	font-size: 20px;
 	color: rgb(113, 23, 23);
 	height: 45px;
 	line-height: 45px;

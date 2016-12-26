@@ -227,9 +227,10 @@ $(document).ready(function(){
 //验证
 	$('form .sub').click(function() {
 		var flag=true;
+		//alert('验证失败！');
 		if(!check_notempty()){
 			flag=false;
-
+			alert('验证失败！');
 		}
 		if(flag){
 			alert('验证成功！');
@@ -297,10 +298,10 @@ var chufa=$('#chufa').val();
 function check_notempty(){
 	
 	if(chufa=='') {
-		// layer.tips('请填写出发地', $('.tip_box'), {
-		//   tips: [1, '#3595CC'],
-		//   time: 4000
-		// });
+		layer.tips('请填写出发地', '$(".tip_box")', {
+		  tips: [1, '#3595CC'],
+		  time: 4000
+		});
 		alert('false');
 		return false;
 	}

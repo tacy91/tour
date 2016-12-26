@@ -19,8 +19,9 @@
 		<style>
 			.custom_form{ }
 			.form_cus{ max-width: 600px; margin: auto; /*background: #000; opacity: 0.5;*/}
+			.form_cus .form-group{ overflow: hidden; }
 			.form_cus label{ color: #666; }
-			.form_cus .col-md-12{ margin-top: 5px; }
+			.form_cus .col-md-12{ /*margin-top: 5px;*/ }
 			.form_cus label{ margin-bottom: 0; }
 			.tip_parent{ position: relative; }
 
@@ -56,199 +57,203 @@
 		</div>
 	</nav>
         
-		<div class="custom_bg">
-			<div class="main">
-				<div class="title">
-					<div class="titleL">
-	
-						<div class="text_a">阳睿旅行会员专享服务</div>
-						<div class="text_b">私人定制</div>
-					</div>
-					<div class="titleR">
-						<div class="text_c">
-							当你见过了世界上最美丽的风景，你的内心会被洗成一片空白，自由而宁静，因为它抚平了心底的不安；当你尝到了极品的美食，会得到最大的满足，因为它填补了你的空虚。你在无垠的海边第一次听到了自己心跳的声音，你在潮湿的风中感受到了平稳的呼吸，多好听啊，一遍一遍的……你突然明白自己还活着，并且如此真实的活着——这，就是旅行的意义。
+		<div class="custom_bg">	
+			<div class="container">		
+				<div class="col-md-8 col-md-offset-2 col-xs-12">
+					<div class="title col-md-12">
+						<div class="titleL col-md-4 col-xs-12">
+		
+							<div class="text_a">阳睿旅行会员专享服务</div>
+							<div class="text_b">私人定制</div>
 						</div>
-						<div class="text_d">
-							旅行，并不奢侈，只要勇敢地迈出第一步。
-						</div>
-					</div>
-				</div>
-				<div class="col-md-12">
-					<div class="col-md-8 col-md-offset-2 col-xs-12">
-						<div class="custom_form">
-							<form role="form" class="form_cus">									
-								<div class="form-group">
-									<div class="col-md-12">
-										<div class="col-md-6 tip_box">
-											<label class="">出发地</label>
-											<div class="">
-												<input type="text" id='chufa' class=" form-control">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<label class="">目的地</label>
-											<div class="">
-												<input type="text" class=" form-control">
-											</div>
-										</div>
-									</div>						
-								</div>
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12 ">出发时间</label>
-										<div class="col-md-12">
-											<input type="text" class="form-control">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12 ">出行时长</label>
-										<div class="col-md-12">
-											<input type="text" class="form-control">
-										</div>
-									</div>
-								</div>																	
-								
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12">主题旅游</label>
-										<div class="col-md-12">
-											<select type="text" class="form-control">
-												<option>远离尘嚣</option>
-												<option>休闲度假</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12">酒店等级</label>
-										<div class="col-md-12">
-											<select class="form-control">
-				
-												<option value="0">顶级奢华</option>
-												<option value="1">豪华尊贵</option>
-												<option value="2">小型精品</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<!-- <div class="xuanxiang">
-									<div class="custom_form_title">酒店等级</div>
-									<div class="arrow"></div>
-									<select class="custom_select" style="width: 490px;">
-				
-										<option value="0">顶级奢华</option>
-										<option value="1">豪华尊贵</option>
-										<option value="2">小型精品</option>
-									</select>
-								</div> -->
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12">单人预算</label>
-										<div class="col-md-12">
-												<select class="form-control" >
-	
-													<option value="0">￥15,000 - 30,000</option>
-													<option value="1">￥30,000 - 50,000</option>
-													<option value="2">￥50,000 - 80,000</option>
-													<option value="2">￥80,000 以上</option>
-												</select>
-										</div>
-									</div>
-								</div>								
-							
-								<div class="form-group">
-									<div class="col-md-12">
-										<div class="col-md-4">
-											<label class=" text-right c9">成人</label>
-											<div class="">
-												<input type="text" class=" form-control">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<label class=" text-right c9">儿童</label>
-											<div class="">
-												<input type="text" class=" form-control">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<label class=" text-right c9">房间</label>
-											<div class="">
-												<input type="text" class=" form-control">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="form-group has-success has-feedback" >
-									<div class="col-md-12">
-										<label class="col-md-12">联系方式</label>
-										<div class="col-md-12">
-											<input type="text" class=" form-control">
-										</div>
-									</div>
-								</div>
-								
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12">联系时间</label>
-										<div class="col-md-12">
-											<input type="text" class=" form-control">
-										</div>
-									</div>
-								</div>																
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12">特殊要求</label>
-										<div class="col-md-12">
-											<!-- <input type="text" class="col-md-9 form-control"> -->
-											<textarea class="col-md-12 form-control"></textarea>
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12">姓名</label>
-										<div class="col-md-12">
-											<input type="text" class="col-md-12 form-control">
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group">
-									<div class="col-md-12">
-										<label class="col-md-12">邮箱</label>
-										<div class="col-md-12">
-											<input type="text" class="col-md-12 form-control">
-										</div>
-									</div>
-								</div>
-
-								<!-- <div class="xuanxiang" style="float: left;	margin-right: 8px;">
-									<div class="custom_form_title">姓名</div>
-									<input type="text" class="custom_select" style="width: 211px;">
-				
-								</div> -->
-								<!-- <div class="xuanxiang" style="float: left;">
-									<div class="custom_form_title">邮箱</div>
-									<input type="text" class="custom_select" style="width: 211px;">
-				
-								</div> -->
-								<div class="form-group">
-									<div class="col-md-12" style="text-align: center;">
-										<input type="submit" class="btn btn-primary  mauto sub" value="提交">
-									</div>
-								</div>
-								</form>
-								
+						<div class="titleR col-md-8 col-xs-10">
+							<div class="text_c">
+								当你见过了世界上最美丽的风景，你的内心会被洗成一片空白，自由而宁静，因为它抚平了心底的不安；当你尝到了极品的美食，会得到最大的满足，因为它填补了你的空虚。你在无垠的海边第一次听到了自己心跳的声音，你在潮湿的风中感受到了平稳的呼吸，多好听啊，一遍一遍的……你突然明白自己还活着，并且如此真实的活着——这，就是旅行的意义。
 							</div>
+							<div class="text_d">
+								旅行，并不奢侈，只要勇敢地迈出第一步。
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+				<div class="container" style="padding-left: 0; padding-right: 0">
+					<div class="col-md-12">
+						<div class="col-md-8  col-xs-12 col-md-offset-2 ">
+							<div class="custom_form">
+								<form role="form" class="form_cus">									
+									<div class="form-group">
+										<div class="col-md-12">
+											<div class="col-md-6 tip_box">
+												<label class="">出发地</label>
+												<div class="">
+													<input type="text" id='chufa' class=" form-control">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<label class="">目的地</label>
+												<div class="">
+													<input type="text" class=" form-control">
+												</div>
+											</div>
+										</div>						
+									</div>
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12 ">出发时间</label>
+											<div class="col-md-12">
+												<input type="text" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12 ">出行时长</label>
+											<div class="col-md-12">
+												<input type="text" class="form-control">
+											</div>
+										</div>
+									</div>																	
+									
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12">主题旅游</label>
+											<div class="col-md-12">
+												<select type="text" class="form-control">
+													<option>远离尘嚣</option>
+													<option>休闲度假</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12">酒店等级</label>
+											<div class="col-md-12">
+												<select class="form-control">
+					
+													<option value="0">顶级奢华</option>
+													<option value="1">豪华尊贵</option>
+													<option value="2">小型精品</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<!-- <div class="xuanxiang">
+										<div class="custom_form_title">酒店等级</div>
+										<div class="arrow"></div>
+										<select class="custom_select" style="width: 490px;">
+					
+											<option value="0">顶级奢华</option>
+											<option value="1">豪华尊贵</option>
+											<option value="2">小型精品</option>
+										</select>
+									</div> -->
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12">单人预算</label>
+											<div class="col-md-12">
+													<select class="form-control" >
+		
+														<option value="0">￥15,000 - 30,000</option>
+														<option value="1">￥30,000 - 50,000</option>
+														<option value="2">￥50,000 - 80,000</option>
+														<option value="2">￥80,000 以上</option>
+													</select>
+											</div>
+										</div>
+									</div>								
+								
+									<div class="form-group">
+										<div class="col-md-12">
+											<div class="col-md-4">
+												<label class=" text-right c9">成人</label>
+												<div class="">
+													<input type="text" class=" form-control">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<label class=" text-right c9">儿童</label>
+												<div class="">
+													<input type="text" class=" form-control">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<label class=" text-right c9">房间</label>
+												<div class="">
+													<input type="text" class=" form-control">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group has-success has-feedback" >
+										<div class="col-md-12">
+											<label class="col-md-12">联系方式</label>
+											<div class="col-md-12">
+												<input type="text" class=" form-control">
+											</div>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12">联系时间</label>
+											<div class="col-md-12">
+												<input type="text" class=" form-control">
+											</div>
+										</div>
+									</div>																
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12">特殊要求</label>
+											<div class="col-md-12">
+												<!-- <input type="text" class="col-md-9 form-control"> -->
+												<textarea class="col-md-12 form-control"></textarea>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12">姓名</label>
+											<div class="col-md-12">
+												<input type="text" class="col-md-12 form-control">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="col-md-12">
+											<label class="col-md-12">邮箱</label>
+											<div class="col-md-12">
+												<input type="text" class="col-md-12 form-control">
+											</div>
+										</div>
+									</div>
+
+									<!-- <div class="xuanxiang" style="float: left;	margin-right: 8px;">
+										<div class="custom_form_title">姓名</div>
+										<input type="text" class="custom_select" style="width: 211px;">
+					
+									</div> -->
+									<!-- <div class="xuanxiang" style="float: left;">
+										<div class="custom_form_title">邮箱</div>
+										<input type="text" class="custom_select" style="width: 211px;">
+					
+									</div> -->
+									<div class="form-group">
+										<div class="col-md-12" style="text-align: center;">
+											<input type="submit" class="btn btn-primary  mauto sub" value="提交">
+										</div>
+									</div>
+									</form>
+									
+								</div>
+						</div>
 					</div>
 				</div>
 				
-			</div>	
 		
 		
 		</div>
