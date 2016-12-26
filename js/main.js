@@ -225,12 +225,67 @@ $(document).ready(function(){
 	
 	//alert($('.wait_load').size());
 //验证
+	$('#phone').bind('blur',function(){
+		if($(this).val()==''){
+			$('form').find('.info_phone').css('display','block');
+			$('form').find('.error_phone').css('display','none');
+		}else if(!check_phone()){
+			$('form').find('.info_phone').css('display','none');
+			$('form').find('.error_phone').css('display','block');
+		}else{
+			$('form').find('.info_phone').css('display','none');
+			$('form').find('.error_phone').css('display','none');
+		}
+	});
+	$('#locstart').bind('blur',function(){
+		if(!check_locstart()){
+			$('form').find('.info_locstart').css('display','block');
+		}else{
+			$('form').find('.info_locstart').css('display','none');
+		}
+	});
+	$('#locend').bind('blur',function(){
+		if(!check_locend()){
+			$('form').find('.info_locend').css('display','block');
+		}else{
+			$('form').find('.info_locend').css('display','none');
+		}
+	});
+	$('#name').bind('blur',function(){
+		if(!check_name()){
+			$('form').find('.info_name').css('display','block');
+		}else{
+			$('form').find('.info_name').css('display','none');
+		}
+	});
+	$('#email').bind('blur',function(){
+		if(!check_email()){
+			$('form').find('.error_email').css('display','block');
+		}else{
+			$('form').find('.error_email').css('display','none');
+		}
+	});
 	$('form .sub').click(function() {
 		var flag=true;
-		//alert('验证失败！');
-		if(!check_notempty()){
+		if(!check_name()){
+			$('form').find('.info_name').css('display','block');	
+			flag=false;			
+		}
+		if(!check_locstart()){
+			$('form').find('.info_locstart').css('display','block');
+			flag=false;	
+		}
+		if(!check_locend()){
+			$('form').find('.info_locend').css('display','block');
+			flag=false;	
+		}
+		if(!check_phone()){
+			$('form').find('.error_phone').css('display','block');	
+			flag=false;			
+		}
+		if(!check_email()){
+			$('form').find('.error_email').css('display','block');	
 			flag=false;
-			alert('验证失败！');
 		}
 		if(flag){
 			alert('验证成功！');
@@ -294,17 +349,36 @@ function getInner(){
 }
 
 //验证是否为空
-var chufa=$('#chufa').val();
-function check_notempty(){
-	
-	if(chufa=='') {
-		layer.tips('请填写出发地', '$(".tip_box")', {
-		  tips: [1, '#3595CC'],
-		  time: 4000
-		});
-		alert('false');
-		return false;
+//var chufa=$('#chufa').val();
+function check_name(){
+	if($('#name').val()!=''){		
+		return true;
 	}
+}
+function check_locstart(){
+	if($('#locstart').val()!=''){		
+		return true;
+	}
+}
+function check_locend(){
+	if($('#locend').val()!=''){		
+		return true;
+	}
+}
+function check_phone(){
+	if(/^1[3,5,8][0-9]{9}$/.test($('#phone').val())){		
+		return true;
+	}
+}
+function check_email(){
+		if(/^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-]+(\.[a-zA-Z]{2,4}){1,2}$/.test($.trim($('#email').val()))) return true;
+	}
+function check_notempty(str){	
+	if(str=='') {						
+		return true;
+	}
+	else return false;
+
 }
 
 
